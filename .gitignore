@@ -1,1 +1,7 @@
+.idea
+.project
+.settings
+.mvn
+.classpath
+jrtt.iml
 /target/
