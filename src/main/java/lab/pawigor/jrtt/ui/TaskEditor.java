@@ -1,4 +1,4 @@
-package lab.pawigor.jrtt;
+package lab.pawigor.jrtt.ui;
 
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.event.ShortcutAction;
@@ -7,6 +7,8 @@ import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
+import lab.pawigor.jrtt.entity.Task;
+import lab.pawigor.jrtt.entity.repo.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @SpringComponent
@@ -15,13 +17,13 @@ public class TaskEditor extends VerticalLayout {
 
     private final TaskRepository taskRepository;
     /* Fields to edit properties in Customer entity */
-    TextField description = new TextField("First name");
-    DateField dueDate = new DateField("Due date");
-    CheckBox isDone = new CheckBox("Is done");
+    TextField description = new TextField("Задача");
+    DateField dueDate = new DateField("Сделать к");
+    CheckBox isDone = new CheckBox("Выполнено");
     /* Action buttons */
-    Button save = new Button("Save", FontAwesome.SAVE);
-    Button cancel = new Button("Cancel");
-    Button delete = new Button("Delete", FontAwesome.TRASH_O);
+    Button save = new Button("Сохранить", FontAwesome.SAVE);
+    Button cancel = new Button("Отмена");
+    Button delete = new Button("Удалить", FontAwesome.TRASH_O);
     CssLayout actions = new CssLayout(save, cancel, delete);
     private Task task;
 
@@ -41,7 +43,7 @@ public class TaskEditor extends VerticalLayout {
         save.addClickListener(e -> taskRepository.save(task));
         delete.addClickListener(e -> taskRepository.delete(task));
         cancel.addClickListener(e -> editTask(task));
-        // setVisible(false);
+        setVisible(false);
 
     }
 

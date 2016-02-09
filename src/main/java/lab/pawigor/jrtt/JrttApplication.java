@@ -4,8 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-// TODO написать ТЗ на задачу
-//
+// TODO: 08.02.16 написать ТЗ на задачу
+// TODO: 08.02.16 add bootstarp support
+
 @SpringBootApplication
 public class JrttApplication {
 

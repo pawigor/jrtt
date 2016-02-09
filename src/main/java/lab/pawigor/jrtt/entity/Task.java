@@ -1,4 +1,4 @@
-package lab.pawigor.jrtt;
+package lab.pawigor.jrtt.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
