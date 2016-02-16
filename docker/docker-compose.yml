@@ -8,3 +8,10 @@ db:
    - "3306:3306"
   volumes:
    - ../mysql:/var/lib/mysql
+#app:
+#  container_name: java_rush_test_app
+#  image: java
+#  volumes:
+#   - ./:/root/jrtt
+#   - ~/.mvn/:/root/.mvn
+#  command: java -jar ./target/jrtt.jar

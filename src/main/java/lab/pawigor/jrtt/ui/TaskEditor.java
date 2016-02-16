@@ -1,20 +1,32 @@
 package lab.pawigor.jrtt.ui;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
-import com.vaadin.ui.*;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.CheckBox;
+import com.vaadin.ui.CssLayout;
+import com.vaadin.ui.DateField;
+import com.vaadin.ui.TextField;
+import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
+
 import lab.pawigor.jrtt.entity.Task;
 import lab.pawigor.jrtt.entity.repo.TaskRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @SpringComponent
 @UIScope
 public class TaskEditor extends VerticalLayout {
 
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+    
     private final TaskRepository taskRepository;
     /* Fields to edit properties in Customer entity */
     TextField description = new TextField("Задача");
